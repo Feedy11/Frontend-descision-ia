@@ -1,0 +1,368 @@
+<div class="chat-page">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="chat-sidebar">
+  
+      <div class="sidebar-header">
+        <div class="sidebar-brand">
+          <div class="brand-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <span>AI Chat</span>
+        </div>
+        <button class="btn-new-chat" title="New conversation" (click)="newChat()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+      </div>
+  
+      <!-- Search -->
+      <div class="sidebar-search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" placeholder="Search conversations..." [(ngModel)]="searchQuery" name="searchQuery" />
+      </div>
+  
+      <!-- History -->
+      <div class="sidebar-section">
+        <span class="section-label">Today</span>
+        <ul class="chat-history">
+          <li class="history-item active">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>Revenue KPI analysis Q1</span>
+            <button class="item-delete" title="Delete">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6l-1 14H6L5 6"></path>
+                <path d="M10 11v6M14 11v6"></path>
+              </svg>
+            </button>
+          </li>
+          <li class="history-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>Sales trend last 6 months</span>
+            <button class="item-delete" title="Delete">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6l-1 14H6L5 6"></path>
+                <path d="M10 11v6M14 11v6"></path>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="sidebar-section">
+        <span class="section-label">Yesterday</span>
+        <ul class="chat-history">
+          <li class="history-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>Employee attrition rate</span>
+            <button class="item-delete" title="Delete">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6l-1 14H6L5 6"></path>
+                <path d="M10 11v6M14 11v6"></path>
+              </svg>
+            </button>
+          </li>
+          <li class="history-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>Marketing campaign ROI</span>
+            <button class="item-delete" title="Delete">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6l-1 14H6L5 6"></path>
+                <path d="M10 11v6M14 11v6"></path>
+              </svg>
+            </button>
+          </li>
+          <li class="history-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>Quarterly dashboard export</span>
+            <button class="item-delete" title="Delete">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6l-1 14H6L5 6"></path>
+                <path d="M10 11v6M14 11v6"></path>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Sidebar footer -->
+      <div class="sidebar-footer">
+        <div class="model-selector">
+          <div class="model-dot"></div>
+          <span>Gemini 1.5 Pro</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+      </div>
+  
+    </aside>
+  
+    <!-- ===== MAIN CHAT AREA ===== -->
+    <main class="chat-main">
+  
+      <!-- Top bar -->
+      <div class="chat-topbar">
+        <div class="topbar-left">
+          <div class="chat-title-wrap">
+            <h2 class="chat-title">Revenue KPI analysis Q1</h2>
+            <span class="chat-subtitle">4 messages · 2 min ago</span>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <button class="topbar-btn" title="Export conversation">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+          </button>
+          <button class="topbar-btn" title="Clear chat" (click)="clearChat()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6l-1 14H6L5 6"></path>
+            </svg>
+          </button>
+          <button class="topbar-btn" title="Settings">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+  
+      <!-- Messages area -->
+      <div class="messages-area" #messagesContainer>
+  
+        <!-- Empty state (shown when no messages) -->
+        <div class="empty-state" *ngIf="messages.length === 0">
+          <div class="empty-icon">
+            <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+              <rect width="40" height="40" rx="12" fill="url(#emptyGrad)"/>
+              <path d="M10 20 L20 10 L30 20 L20 30 Z" fill="white" fill-opacity="0.8"/>
+              <circle cx="20" cy="20" r="5" fill="white"/>
+              <defs>
+                <linearGradient id="emptyGrad" x1="0" y1="0" x2="40" y2="40">
+                  <stop offset="0%" stop-color="#2563EB"/>
+                  <stop offset="100%" stop-color="#7C3AED"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <h3>Ask anything about your data</h3>
+          <p>I can analyze your KPIs, generate reports, explain trends, and answer questions in natural language.</p>
+  
+          <!-- Suggestion chips -->
+          <div class="suggestion-grid">
+            <button class="suggestion-chip" (click)="useSuggestion('What are my top 5 KPIs this month?')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              What are my top 5 KPIs this month?
+            </button>
+            <button class="suggestion-chip" (click)="useSuggestion('Show me the revenue trend for Q1 2026')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              Show me the revenue trend for Q1 2026
+            </button>
+            <button class="suggestion-chip" (click)="useSuggestion('Why did sales drop in February?')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              Why did sales drop in February?
+            </button>
+            <button class="suggestion-chip" (click)="useSuggestion('Generate a performance summary report')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              Generate a performance summary report
+            </button>
+          </div>
+        </div>
+  
+        <!-- Messages loop -->
+        <div class="messages-list" *ngIf="messages.length > 0">
+  
+          <!-- Message user example -->
+          <div class="message user">
+            <div class="message-content">
+              <p>What are my top performing KPIs for Q1 2026? Can you give me a detailed breakdown?</p>
+              <span class="message-time">09:14</span>
+            </div>
+            <div class="message-avatar user-avatar">JD</div>
+          </div>
+  
+          <!-- Message AI example -->
+          <div class="message ai">
+            <div class="message-avatar ai-avatar">
+              <svg width="16" height="16" viewBox="0 0 40 40" fill="none">
+                <path d="M10 20 L20 10 L30 20 L20 30 Z" fill="white" fill-opacity="0.9"/>
+                <circle cx="20" cy="20" r="5" fill="white"/>
+              </svg>
+            </div>
+            <div class="message-content">
+              <div class="ai-header">
+                <span class="ai-name">DataInsight AI</span>
+                <span class="ai-model">Gemini 1.5 Pro</span>
+              </div>
+              <p>Here's a detailed breakdown of your <strong>top 5 KPIs for Q1 2026</strong>:</p>
+  
+              <!-- KPI cards inside message -->
+              <div class="kpi-cards">
+                <div class="kpi-card green">
+                  <div class="kpi-label">Revenue</div>
+                  <div class="kpi-value">€248,500</div>
+                  <div class="kpi-change">↑ +18.4%</div>
+                </div>
+                <div class="kpi-card blue">
+                  <div class="kpi-label">New Clients</div>
+                  <div class="kpi-value">142</div>
+                  <div class="kpi-change">↑ +12.1%</div>
+                </div>
+                <div class="kpi-card purple">
+                  <div class="kpi-label">Churn Rate</div>
+                  <div class="kpi-value">3.2%</div>
+                  <div class="kpi-change">↓ −0.8%</div>
+                </div>
+                <div class="kpi-card orange">
+                  <div class="kpi-label">Avg. Order</div>
+                  <div class="kpi-value">€1,750</div>
+                  <div class="kpi-change">↑ +5.3%</div>
+                </div>
+              </div>
+  
+              <p>Revenue is your strongest performer, up <strong>18.4%</strong> compared to Q4 2025. Churn rate improvement is particularly notable — the lowest it's been in 12 months.</p>
+              <p>Would you like me to generate a detailed chart or export this as a PDF report?</p>
+  
+              <div class="message-actions">
+                <button class="msg-action-btn">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  Copy
+                </button>
+                <button class="msg-action-btn">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 .49-3.5"></path></svg>
+                  Regenerate
+                </button>
+                <button class="msg-action-btn">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                  Export PDF
+                </button>
+                <button class="msg-action-btn like">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"></path><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+                </button>
+                <button class="msg-action-btn dislike">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10z"></path><path d="M17 2h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"></path></svg>
+                </button>
+              </div>
+              <span class="message-time">09:14</span>
+            </div>
+          </div>
+  
+          <!-- User message 2 -->
+          <div class="message user">
+            <div class="message-content">
+              <p>Yes, export it as PDF please.</p>
+              <span class="message-time">09:15</span>
+            </div>
+            <div class="message-avatar user-avatar">JD</div>
+          </div>
+  
+          <!-- AI typing indicator -->
+          <div class="message ai" *ngIf="isTyping">
+            <div class="message-avatar ai-avatar">
+              <svg width="16" height="16" viewBox="0 0 40 40" fill="none">
+                <path d="M10 20 L20 10 L30 20 L20 30 Z" fill="white" fill-opacity="0.9"/>
+                <circle cx="20" cy="20" r="5" fill="white"/>
+              </svg>
+            </div>
+            <div class="message-content typing-content">
+              <div class="typing-indicator">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+  
+      </div>
+  
+      <!-- ===== INPUT AREA ===== -->
+      <div class="input-area">
+  
+        <!-- Attached file preview -->
+        <div class="file-preview" *ngIf="attachedFile">
+          <div class="file-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+            </svg>
+            <span>{{ attachedFile }}</span>
+            <button class="file-remove" (click)="removeFile()">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+  
+        <div class="input-box">
+          <button class="input-action-btn" title="Attach file" (click)="attachFile()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
+            </svg>
+          </button>
+  
+          <textarea
+            class="message-input"
+            placeholder="Ask anything about your data..."
+            [(ngModel)]="inputMessage"
+            name="inputMessage"
+            rows="1"
+            (keydown.enter)="onEnterKey($event)"
+          ></textarea>
+  
+          <div class="input-right">
+            <span class="char-count" [class.warn]="inputMessage.length > 800">
+              {{ inputMessage.length }}/1000
+            </span>
+            <button
+              class="send-btn"
+              [class.active]="inputMessage.trim().length > 0"
+              [disabled]="!inputMessage.trim() || isLoading"
+              (click)="sendMessage()"
+              title="Send message"
+            >
+              <svg *ngIf="!isLoading" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              <svg *ngIf="isLoading" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="spin">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+  
+        <p class="input-disclaimer">DataInsight AI can make mistakes. Always verify important KPI data against your source files.</p>
+      </div>
+  
+    </main>
+  
+  </div>
