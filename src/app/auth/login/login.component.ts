@@ -45,7 +45,7 @@ export class LoginComponent {
       next: () => {
         this.isLoading = false;
         // Navigate to dashboard after successful login
-        this.router.navigate(['/upload']);
+        this.router.navigate(['/datasets']);
       },
       error: (err) => {
         this.isLoading = false;

@@ -11,6 +11,7 @@ import { DashboardComponent }       from './dashboard/dashboard.component';
 import { AdminUserListComponent }   from './admin/users/admin-users-list/admin-users-list.component';
 import { AdminUserFormComponent }   from './admin/users/admin-user-form/admin-user-form.component';
 import { UploadComponent } from './upload/upload.component';
+import { DatasetsListComponent } from './datasets-list/datasets-list.component';
 
 export const routes: Routes = [
   // Public routes (redirect to /dashboard if already logged in)
@@ -26,7 +27,7 @@ export const routes: Routes = [
   { path: 'profile',          component: ProfileComponent,        canActivate: [authGuard]  },
   { path: 'users',            component: UsersComponent,          canActivate: [authGuard]  },
   {path:'upload',component:UploadComponent,canActivate:[authGuard] },
-
+  { path: 'datasets', component: DatasetsListComponent, canActivate: [authGuard] },
   // Admin routing
   { path: 'admin/users',          component: AdminUserListComponent, canActivate: [authGuard, adminGuard] },
   { path: 'admin/users/new',      component: AdminUserFormComponent, canActivate: [authGuard, adminGuard] },
