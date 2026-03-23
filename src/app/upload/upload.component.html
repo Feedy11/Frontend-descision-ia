@@ -1,10 +1,14 @@
 <div class="upload-page">
 
-  <!-- Page Header -->
+  <!-- Page Header avec bouton retour -->
   <div class="page-header">
-    <div>
-      <h1>Importer des données</h1>
-      <p>Importez vos fichiers CSV ou Excel pour analyser vos KPIs automatiquement</p>
+    <div class="header-left">
+
+      <div class="header-divider"></div>
+      <div>
+        <h1>Importer des données</h1>
+        <p>Importez vos fichiers CSV ou Excel pour analyser vos KPIs automatiquement</p>
+      </div>
     </div>
     <span class="ai-badge">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -107,7 +111,7 @@
         </div>
       </div>
 
-      <!-- ── RÉSULTAT SUCCÈS avec infos dataset ── -->
+      <!-- ── RÉSULTAT SUCCÈS ── -->
       <div class="dataset-result" *ngIf="uploadStatus === 'success' && lastDataset">
         <div class="result-header">
           <div class="result-icon-ok">
@@ -178,7 +182,6 @@
     <!-- ===== SIDE PANEL ===== -->
     <div class="side-panel">
 
-      <!-- Formats supportés -->
       <div class="info-card formats-card">
         <div class="info-card-header">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -190,29 +193,20 @@
         <div class="format-list">
           <div class="format-row">
             <div class="format-dot green"></div>
-            <div>
-              <span class="format-name">CSV</span>
-              <span class="format-desc">Comma Separated Values</span>
-            </div>
+            <div><span class="format-name">CSV</span><span class="format-desc">Comma Separated Values</span></div>
           </div>
           <div class="format-row">
             <div class="format-dot blue"></div>
-            <div>
-              <span class="format-name">XLSX</span>
-              <span class="format-desc">Microsoft Excel (2007+)</span>
-            </div>
+            <div><span class="format-name">XLSX</span><span class="format-desc">Microsoft Excel (2007+)</span></div>
           </div>
           <div class="format-row">
             <div class="format-dot purple"></div>
-            <div>
-              <span class="format-name">XLS</span>
-              <span class="format-desc">Microsoft Excel (Legacy)</span>
-            </div>
+            <div><span class="format-name">XLS</span><span class="format-desc">Microsoft Excel (Legacy)</span></div>
           </div>
         </div>
       </div>
 
-      <!-- Imports récents depuis le backend -->
+      <!-- Imports récents -->
       <div class="info-card">
         <div class="info-card-header">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -221,7 +215,6 @@
           </svg>
           Imports récents
         </div>
-
         <div class="recent-empty" *ngIf="recentUploads.length === 0">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -229,7 +222,6 @@
           </svg>
           <p>Aucun import récent</p>
         </div>
-
         <ul class="recent-list" *ngIf="recentUploads.length > 0">
           <li *ngFor="let r of recentUploads">
             <div class="recent-icon" [class.csv]="r.type === 'csv'" [class.xlsx]="r.type === 'xlsx'">

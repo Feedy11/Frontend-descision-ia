@@ -16,8 +16,6 @@ import {
 } from '../models/user.model';
 import { TokenResponse, NewPassword } from '../models/login.model';
 
-// ─────────────────────────────────────────────────────────────────────────────
-
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
@@ -27,7 +25,7 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  // ── Helpers ────────────────────────────────────────────────────────────────
+  //Helpers
 
   getToken(): string | null {
     return localStorage.getItem(this.TOKEN_KEY);
@@ -58,13 +56,7 @@ export class AuthService {
     localStorage.removeItem(this.USER_KEY);
   }
 
-  // ── LOGIN ──────────────────────────────────────────────────────────────────
-
-  /**
-   * POST /api/v1/login/access-token
-   * Uses application/x-www-form-urlencoded (OAuth2 password flow).
-   * The interceptor is skipped for this endpoint.
-   */
+  //login
   login(email: string, password: string): Observable<TokenResponse> {
     const body = new URLSearchParams();
     body.set('username', email);
