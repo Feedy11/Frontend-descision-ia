@@ -154,7 +154,7 @@ export class UploadComponent implements OnInit {
           this.uploadStatus = 'success';
           this.toastr.success(
             `${this.selectedFile?.name} importé ! ID : #${event.body.id}`,
-            'Import réussi ✅', { timeOut: 5000, progressBar: true }
+            'Import réussi ', { timeOut: 5000, progressBar: true }
           );
           this.loadRecentDatasets();
         }
@@ -162,7 +162,7 @@ export class UploadComponent implements OnInit {
       error: (err) => {
         this.uploadStatus = 'error';
         this.errorMessage = err.error?.detail || 'Erreur lors de l\'import.';
-        this.toastr.error(this.errorMessage, 'Erreur d\'import ❌', { timeOut: 5000, progressBar: true });
+        this.toastr.error(this.errorMessage, 'Erreur d\'import ', { timeOut: 5000, progressBar: true });
       }
     });
   }

@@ -18,26 +18,25 @@ export class DatasetsListComponent implements OnInit {
 
   private readonly IA_API = 'http://localhost:8001/api/v1';
 
-  // ── Données ──────────────────────────────────────────────
+  //Données
   allDatasets     : Dataset[] = [];
   filteredDatasets: Dataset[] = [];
-
-  // ── Tabs ─────────────────────────────────────────────────
-  activeTab = 'mine';         // 'mine' | 'all'
+//Tabs
+  activeTab = 'mine';
   isAdmin   = false;
   totalAll  = 0;
 
-  // ── Recherche ────────────────────────────────────────────
+  // Recherche
   searchTerm = '';
 
-  // ── Pagination ───────────────────────────────────────────
+  //Pagination
   currentPage = 1;
   pageSize    = 10;
 
-  // ── States ───────────────────────────────────────────────
+  //States
   isLoading = false;
 
-  // ── Suppression ──────────────────────────────────────────
+  //Suppression
   showDeleteModal  = false;
   isDeleting       = false;
   datasetToDelete  : Dataset | null = null;
@@ -53,14 +52,14 @@ export class DatasetsListComponent implements OnInit {
     this.loadDatasets();
   }
 
-  // ── Changer de tab ───────────────────────────────────────
+  //Changer de tab
   setTab(tab: string): void {
     this.activeTab  = tab;
     this.currentPage = 1;
     this.loadDatasets();
   }
 
-  // ── Charger les datasets ─────────────────────────────────
+  //Charger les datasets
   loadDatasets(): void {
     this.isLoading = true;
 
@@ -88,7 +87,7 @@ export class DatasetsListComponent implements OnInit {
     });
   }
 
-  // ── Recherche ────────────────────────────────────────────
+  //Recherche
   onSearch(): void {
     const term = this.searchTerm.toLowerCase().trim();
     this.filteredDatasets = term
@@ -100,7 +99,7 @@ export class DatasetsListComponent implements OnInit {
     this.currentPage = 1;
   }
 
-  // ── Pagination ───────────────────────────────────────────
+  //Pagination
   get paginatedDatasets(): Dataset[] {
     const start = (this.currentPage - 1) * this.pageSize;
     return this.filteredDatasets.slice(start, start + this.pageSize);
@@ -114,7 +113,7 @@ export class DatasetsListComponent implements OnInit {
     if (page >= 1 && page <= this.totalPages) this.currentPage = page;
   }
 
-  // ── Suppression ──────────────────────────────────────────
+  //Suppression
   confirmDelete(d: Dataset): void {
     this.datasetToDelete = d;
     this.showDeleteModal  = true;
@@ -125,7 +124,7 @@ export class DatasetsListComponent implements OnInit {
     this.showDeleteModal  = false;
   }
 
-  // DELETE /api/v1/datasets/{dataset_id}
+  // DELETE
   deleteDataset(): void {
     if (!this.datasetToDelete) return;
     this.isDeleting = true;
@@ -137,7 +136,7 @@ export class DatasetsListComponent implements OnInit {
           this.showDeleteModal  = false;
           this.toastr.success(
             `${this.datasetToDelete?.original_filename} supprimé.`,
-            'Suppression réussie ✅',
+            'Suppression réussie ',
             { timeOut: 3000, progressBar: true }
           );
           this.datasetToDelete = null;
@@ -148,14 +147,14 @@ export class DatasetsListComponent implements OnInit {
           this.showDeleteModal = false;
           this.toastr.error(
             'Impossible de supprimer ce dataset.',
-            'Erreur ❌',
+            'Erreur',
             { timeOut: 4000, progressBar: true }
           );
         }
       });
   }
 
-  // ── Helpers ──────────────────────────────────────────────
+  //Helpers
   getStatusClass(status: string): string {
     const map: Record<string, string> = {
       UPLOADED  : 'status-uploaded',

@@ -157,3 +157,7 @@
   background: rgba(239,68,68,0.06);
   color: #EF4444;
 }
+.admin-item {
+  background: rgba(255, 0, 0, 0.08);
+  color: #ff4d4f;
+}

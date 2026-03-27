@@ -2,7 +2,6 @@
 
   <!-- Brand mini -->
   <div class="sidebar-brand">
-
     <span>Données IA</span>
   </div>
 
@@ -13,6 +12,7 @@
     <div class="nav-section">
       <span class="nav-section-label">Import</span>
 
+      <!-- Importer -->
       <a routerLink="/upload" routerLinkActive="active" class="nav-item">
         <div class="nav-icon">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -24,6 +24,7 @@
         <span>Importer</span>
       </a>
 
+      <!-- Datasets -->
       <a routerLink="/datasets" routerLinkActive="active" class="nav-item">
         <div class="nav-icon">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -37,10 +38,11 @@
       </a>
     </div>
 
-    <!-- Dashboard -->
+    <!-- Navigation -->
     <div class="nav-section">
       <span class="nav-section-label">Navigation</span>
 
+      <!-- Dashboard -->
       <a routerLink="/dashboard" routerLinkActive="active" class="nav-item">
         <div class="nav-icon">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -53,6 +55,7 @@
         <span>Dashboard</span>
       </a>
 
+      <!-- Profil -->
       <a routerLink="/profile" routerLinkActive="active" class="nav-item">
         <div class="nav-icon">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -63,6 +66,34 @@
         <span>Mon profil</span>
       </a>
 
+      <!-- Nettoyage -->
+      <a routerLink="/cleaning" routerLinkActive="active" class="nav-item">
+        <div class="nav-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 6h18"></path>
+            <path d="M8 6v12"></path>
+            <path d="M16 6v12"></path>
+            <path d="M5 6l1-3h12l1 3"></path>
+          </svg>
+        </div>
+        <span>Nettoyage</span>
+      </a>
+
+      <!-- Admin: Utilisateurs -->
+      <a routerLink="/admin/users"
+         routerLinkActive="active"
+         class="nav-item admin-item"
+         *ngIf="isAdmin">
+        <div class="nav-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <span>Utilisateurs</span>
+      </a>
 
     </div>
 

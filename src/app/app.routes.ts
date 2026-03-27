@@ -13,6 +13,7 @@ import { AdminUserFormComponent }          from './admin/users/admin-user-form/a
 import { UploadComponent }                 from './upload/upload.component';
 import { DatasetsListComponent }           from './datasets-list/datasets-list.component';
 import { DataLayoutComponent }             from './shared/data-layout/data-layout.component';
+import { CleaningComponent } from './cleaning/cleaning.component';
 
 export const routes: Routes = [
 
@@ -26,6 +27,7 @@ export const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [authGuard] },
   { path: 'profile',   component: ProfileComponent,   canActivate: [authGuard] },
   { path: 'users',     component: UsersComponent,     canActivate: [authGuard] },
+  { path: 'cleaning', component: CleaningComponent, canActivate: [authGuard] },
 
   //Section Data
   {
@@ -35,6 +37,7 @@ export const routes: Routes = [
     children : [
       { path: 'upload',   component: UploadComponent      },
       { path: 'datasets', component: DatasetsListComponent },
+
     ]
   },
 
